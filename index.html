@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Our Group Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1e3c72, #2a5298); 
+      color: #ffffff;
+      text-align: center;
+    }
+
+    /* Fade-in animation for the whole page */
+    body {
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1 {
+      color: #ffcc00;
+      margin-top: 40px;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 20px auto;
+      width: 80%;
+    }
+
+    h2 {
+      color: #ffcc00;
+      margin-top: 30px;
+    }
+
+    /* MEMBER CARDS */
+    ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    li {
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      width: 260px;            /* bigger card */
+      padding: 25px;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+      animation: popUp 0.7s ease;
+    }
+
+    @keyframes popUp {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    li:hover {
+      transform: scale(1.07);
+      background-color: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 0 25px #ffcc00;
+    }
+
+    /* PROFILE PICTURES */
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid #ffcc00;
+      object-fit: cover;
+      transition: 0.4s ease;
+      box-shadow: 0 0 10px #ffcc00;
+    }
+
+    /* Glowing hover effect */
+    .profile-pic:hover {
+      transform: scale(1.12);
+      box-shadow: 
+        0 0 15px #ffcc00,
+        0 0 30px #ffcc00,
+        0 0 45px #ffcc00;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      text-decoration: none;
+      color: #1e3c72;
+      background-color: #ffcc00;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s ease;
+      box-shadow: 0 0 10px #ffcc00;
+    }
+
+    .btn:hover {
+      background-color: #ffe783;
+      box-shadow: 0 0 15px #ffe783, 0 0 30px #ffe783, 0 0 60px #ffe783;
+      transform: scale(1.08);
+    }
+
+    /* Group picture */
+    img.main-pic {
+      width: 600px;
+      height: 380px;
+      border-radius: 10px;
+      border: 2px solid #ffcc00;
+      margin: 30px 0;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Welcome to Our Group Portfolio</h1>
+
+  <p>
+    Hello! We are <strong>Group 8</strong>, a team of motivated students who believe in teamwork, creativity, and continuous learning. 
+    Our group combines different skills such as web development, designing, editing, research, and project management. 
+    Together, we collaborate, share ideas, and support each other to produce meaningful and well-crafted outputs. 
+    This webpage showcases who we are, our roles, and the teamwork that makes our group effective.
+  </p>
+
+  <h2>Meet Our Members</h2>
+
+  <ul>
+    <li>
+      <img src="udansolopic.jpg" alt="Udan Picture" class="profile-pic"><br>
+      <strong>Udan, Niel Ian R.</strong><br>
+      Leader<br>
+      <small>Team leader, project organizer, and main developer.</small><br>
+      <a href="udan.html" class="btn">View Portfolio</a>
+    </li>
+
+    <li>
+      <img src="batallasolopic.jpg" alt="Batalla Picture" class="profile-pic"><br>
+      <strong>Batalla, Maricris E.</strong><br>
+      Member<br>
+      <small>Creative designer and researcher of the group.</small><br>
+      <a href="batalla.html" class="btn">View Portfolio</a>
+    </li>
+
+    <li>
+      <img src="memyself.jpg" alt="Wakita Picture" class="profile-pic"><br>
+      <strong>Wakita, Ryan James C.</strong><br>
+      Member<br>
+      <small>Editor of group files and content formatter.</small><br>
+      <a href="wakita.html" class="btn">View Portfolio</a>
+    </li>
+
+    <li>
+      <img src="acostasolopic.jpg" alt="Acosta Picture" class="profile-pic"><br>
+      <strong>Acosta, James Vincent O.</strong><br>
+      Member<br>
+      <small>Supports layout design and quality checking.</small><br>
+      <a href="acosta.html" class="btn">View Portfolio</a>
+    </li>
+  </ul>
+
+
+   <h2>Our Group Photo</h2>
+  <img src="group8pic.jpg" alt="Group 8 - Team Picture" class="main-pic">
+
+   <footer style="
+      margin-top: 40px; 
+      padding: 15px; 
+      font-size: 14px; 
+      color: #ffffffa8;
+    ">
+    © 2025 Group 8 – All Rights Reserved
+  </footer>
+
+</body>
+</html>
