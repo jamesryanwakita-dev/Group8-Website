@@ -9,157 +9,130 @@
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #1e3c72, #2a5298); 
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
       color: #ffffff;
       text-align: center;
+      transition: background 0.5s ease, color 0.5s ease;
+      scroll-behavior: smooth;
     }
 
-    /* Fade-in animation for the whole page */
-    body {
-      animation: fadeIn 1.2s ease-in;
-    }
+    body.light-mode { background: #f5f5f5; color: #1e3c72; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+    h1, h2 { color: #D9A7FF; transition: color 0.5s ease; }
+    body.light-mode h1, body.light-mode h2 { color: #7A3EFF; }
 
-    h1 {
-      color: #ffcc00;
-      margin-top: 40px;
-    }
+    p { font-size: 18px; margin: 20px auto; width: 80%; transition: color 0.5s ease; }
 
-    p {
-      font-size: 18px;
-      margin: 20px auto;
-      width: 80%;
-    }
+    ul { list-style-type: none; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+    li { background: rgba(255, 255, 255, 0.13); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 20px; width: 260px; padding: 25px; transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.5s ease; animation: popUp 0.7s ease; }
+    body.light-mode li { background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); color: #1e3c72; }
 
-    h2 {
-      color: #ffcc00;
-      margin-top: 30px;
-    }
+    @keyframes popUp { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    li:hover { transform: scale(1.07); background-color: rgba(255, 255, 255, 0.18); box-shadow: 0 0 25px #7A3EFF; }
 
-    /* MEMBER CARDS */
-    ul {
-      list-style-type: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
+    .profile-pic { width: 140px; height: 140px; border-radius: 50%; border: 3px solid #7A3EFF; object-fit: cover; transition: 0.4s ease, box-shadow 0.5s ease; box-shadow: 0 0 10px #7A3EFF; }
+    .profile-pic:hover { transform: scale(1.12); box-shadow: 0 0 15px #7A3EFF, 0 0 30px #7A3EFF, 0 0 45px #7A3EFF; }
 
-    li {
-      background: rgba(255, 255, 255, 0.13);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 20px;
-      width: 260px;            /* bigger card */
-      padding: 25px;
-      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-      animation: popUp 0.7s ease;
-    }
+    .btn { display: inline-block; margin-top: 12px; text-decoration: none; color: white; background-color: #7A3EFF; padding: 10px 20px; border-radius: 8px; font-weight: bold; transition: 0.3s ease; box-shadow: 0 0 10px #7A3EFF; }
+    .btn:hover { background-color: #B089FF; box-shadow: 0 0 15px #B089FF, 0 0 30px #B089FF, 0 0 60px #B089FF; transform: scale(1.08); }
 
-    @keyframes popUp {
-      from { transform: scale(0.7); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
+    img.main-pic { width: 600px; height: 380px; border-radius: 10px; border: 2px solid #7A3EFF; margin: 30px 0; transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 1s ease-in-out; opacity: 1; }
+    img.main-pic:hover { transform: scale(1.08) rotate(2deg); box-shadow: 0 0 25px #7A3EFF, 0 0 50px #7A3EFF; }
 
-    li:hover {
-      transform: scale(1.07);
-      background-color: rgba(255, 255, 255, 0.18);
-      box-shadow: 0 0 25px #ffcc00;
-    }
+    section.header-section{ background: rgba(255, 255, 255, 0.08); padding: 30px 0; margin-bottom: 20px; transition: background 0.5s ease, color 0.5s ease; }
+    body.light-mode section.header-section { background: rgba(0,0,0,0.05); color: #1e3c72; }
 
-    /* PROFILE PICTURES */
-    .profile-pic {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      border: 3px solid #ffcc00;
-      object-fit: cover;
-      transition: 0.4s ease;
-      box-shadow: 0 0 10px #ffcc00;
-    }
+    section.footer-section { background-color: rgba(255,255,255,0.08); padding:30px 0; width:100%; color:#ffffffa8; font-size:14px; text-align:center; transition: background 0.5s ease, color 0.5s ease; } 
+    body.light-mode section.footer-section { background-color: rgba(230,230,230,0.5); color:#555; }
 
-    /* Glowing hover effect */
-    .profile-pic:hover {
-      transform: scale(1.12);
-      box-shadow: 
-        0 0 15px #ffcc00,
-        0 0 30px #ffcc00,
-        0 0 45px #ffcc00;
-    }
+    section.contact-section { background-color: rgba(0,0,0,0.2); padding: 30px 0; margin: 40px 0; border-radius: 15px; }
+    body.light-mode section.contact-section { background-color: rgba(230,230,230,0.5); color: #1e3c72; }
+    .contact-section h2 { margin-bottom: 15px; }
+    .contact-section p { font-size: 16px; }
 
-    .btn {
-      display: inline-block;
-      margin-top: 12px;
-      text-decoration: none;
-      color: #1e3c72;
-      background-color: #ffcc00;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s ease;
-      box-shadow: 0 0 10px #ffcc00;
-    }
+    .toggle-btn { position: fixed; top: 20px; right: 20px; padding: 10px 20px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; background-color: #7A3EFF; color: white; box-shadow: 0 0 10px #7A3EFF; transition: all 0.3s ease; z-index: 1001; }
+    .toggle-btn:hover { background-color: #B089FF; box-shadow: 0 0 15px #B089FF; }
 
-    .btn:hover {
-      background-color: #ffe783;
-      box-shadow: 0 0 15px #ffe783, 0 0 30px #ffe783, 0 0 60px #ffe783;
-      transform: scale(1.08);
-    }
+    nav { width: 100%; background-color: rgba(0,0,0,0.3); display: flex; justify-content: center; position: fixed; top: 0; left: 0; z-index: 1000; padding: 20px 0; transition: background 0.5s ease; }
+    nav a { color: #ffffff; text-decoration: none; margin: 0 30px; font-weight: bold; font-size: 20px; transition: color 0.3s ease; }
+    nav a:hover { color: #B089FF; }
+    body.light-mode nav { background-color: rgba(255,255,255,0.3); }
+    body.light-mode nav a { color: #1e3c72; }
+    body.light-mode nav a:hover { color: #7A3EFF; }
+    .nav-spacing { height: 70px; }
 
-    /* Group picture */
-    img.main-pic {
-      width: 600px;
-      height: 380px;
-      border-radius: 10px;
-      border: 2px solid #ffcc00;
-      margin: 30px 0;
-    }
+    /* Gmail / Contact Links */
+.email-link {
+  color: #FFD700; /* Bright gold for dark mode */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.5s ease;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
+/* Light mode colors */
+body.light-mode .email-link {
+  color: #FF8C00; /* Darker orange for light mode */
+}
 
   </style>
 </head>
 <body>
-  <h1>Welcome to Our Group Portfolio</h1>
 
-  <p>
-    Hello! We are <strong>Group 8</strong>, a team of motivated students who believe in teamwork, creativity, and continuous learning. 
-    Our group combines different skills such as web development, designing, editing, research, and project management. 
-    Together, we collaborate, share ideas, and support each other to produce meaningful and well-crafted outputs. 
-    This webpage showcases who we are, our roles, and the teamwork that makes our group effective.
-  </p>
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#members">Members</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+  <div class="nav-spacing"></div>
 
-  <h2>Meet Our Members</h2>
+  <!-- Dark Mode Toggle Button -->
+  <button class="toggle-btn" onclick="toggleMode()">
+    <span id="mode-icon">🌙</span>
+  </button>
 
+  <!-- Header -->
+  <section class="header-section" id="home">
+    <h1>Welcome to Our Group Portfolio</h1>
+    <p>
+      Hello! We are <strong>Group 8</strong>, a team of motivated students who believe in teamwork, creativity, and continuous learning. 
+      Our group combines different skills such as web development, designing, editing, research, and project management. 
+      Together, we collaborate, share ideas, and support each other to produce meaningful and well-crafted outputs. 
+      This webpage showcases who we are, our roles, and the teamwork that makes our group effective.
+    </p>
+  </section>
+
+  <!-- Members -->
+  <h2 id="members">Meet Our Members</h2>
   <ul>
     <li>
-      <img src="udansolopic.jpg" alt="Udan Picture" class="profile-pic"><br>
+      <img src="udansolopic.jpg" class="profile-pic"><br>
       <strong>Udan, Niel Ian R.</strong><br>
       Leader<br>
       <small>Team leader, project organizer, and main developer.</small><br>
       <a href="udan.html" class="btn">View Portfolio</a>
     </li>
-
     <li>
-      <img src="batallasolopic.jpg" alt="Batalla Picture" class="profile-pic"><br>
+      <img src="batallasolopic.jpg" class="profile-pic"><br>
       <strong>Batalla, Maricris E.</strong><br>
       Member<br>
       <small>Creative designer and researcher of the group.</small><br>
       <a href="batalla.html" class="btn">View Portfolio</a>
     </li>
-
     <li>
-      <img src="memyself.jpg" alt="Wakita Picture" class="profile-pic"><br>
+      <img src="memyself.jpg" class="profile-pic"><br>
       <strong>Wakita, Ryan James C.</strong><br>
       Member<br>
       <small>Editor of group files and content formatter.</small><br>
       <a href="wakita.html" class="btn">View Portfolio</a>
     </li>
-
     <li>
-      <img src="acostasolopic.jpg" alt="Acosta Picture" class="profile-pic"><br>
+      <img src="acostasolopic.jpg" class="profile-pic"><br>
       <strong>Acosta, James Vincent O.</strong><br>
       Member<br>
       <small>Supports layout design and quality checking.</small><br>
@@ -167,18 +140,64 @@
     </li>
   </ul>
 
+  <!-- Group Photo -->
+  <h2 id="gallery">Our Group Photo</h2>
+  <img id="groupPhoto" src="group8pic.jpg" class="main-pic">
 
-   <h2>Our Group Photo</h2>
-  <img src="group8pic.jpg" alt="Group 8 - Team Picture" class="main-pic">
+  <!-- Contact Section -->
+ <section class="contact-section" id="contact">
+  <h2>Contact Us</h2>
+  <p>Email us at:</p>
+  <p>
+    <a href="mailto:nielianudan@gmail.com" class="email-link">nielianudan@gmail.com</a><br>
+    <a href="mailto:jamesryanwakita@gmail.com" class="email-link">jamesryanwakita@gmail.com</a><br>
+    <a href="mailto:maricrisbatalla@gmail.com" class="email-link">maricrisbatalla@gmail.com</a><br>
+    <a href="mailto:acostajames@gmail.com" class="email-link">acostajames@gmail.com</a>
+  </p>
+</section>
 
-   <footer style="
-      margin-top: 40px; 
-      padding: 15px; 
-      font-size: 14px; 
-      color: #ffffffa8;
-    ">
-    © 2025 Group 8 – All Rights Reserved
-  </footer>
 
+  <!-- Footer -->
+  <section class="footer-section">
+    <p>© 2025 Group Portfolio. All Rights Reserved</p>
+  </section>
+
+  <script>
+    const modeIcon = document.getElementById('mode-icon');
+    if(localStorage.getItem('mode') === 'light') {
+      document.body.classList.add('light-mode');
+      modeIcon.textContent = '🌞';
+    } else {
+      modeIcon.textContent = '🌙';
+    }
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+      if(document.body.classList.contains('light-mode')){
+        localStorage.setItem('mode', 'light');
+        modeIcon.textContent = '🌞';
+      } else {
+        localStorage.setItem('mode', 'dark');
+        modeIcon.textContent = '🌙';
+      }
+    }
+
+    /* Slideshow */
+    const groupPhotos = [
+      'group8pic.jpg',
+      'group8pic2.jpg',
+      'group8pic3.jpg',
+      'group8pic4.jpg'
+    ];
+    let currentIndex = 0;
+    const groupPhoto = document.getElementById('groupPhoto');
+    setInterval(() => {
+      groupPhoto.style.opacity = 0;
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % groupPhotos.length;
+        groupPhoto.src = groupPhotos[currentIndex];
+        groupPhoto.style.opacity = 1;
+      }, 1000);
+    }, 4000);
+  </script>
 </body>
 </html>
